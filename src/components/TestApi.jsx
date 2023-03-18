@@ -7,7 +7,7 @@ export const TestApi = () => {
 
   return (
     <div>
-      <h1>DATA</h1>
+      <h1>helllooooo</h1>
     </div>
   );
 };
