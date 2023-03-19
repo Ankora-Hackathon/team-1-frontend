@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Layout } from '../components/shared';
-import { Diagnose, History, Medications, Profile } from '../components/tabs';
+import { Diagnose, History, Medications, Profile, Detection } from '../components/tabs';
 
 const menu = [
   {
     label: 'Diagnose',
     value: 'diagnose',
+  },
+  {
+    label: 'Detection',
+    value: 'detection',
   },
   {
     label: 'History',
@@ -26,6 +30,7 @@ const Tabs = {
   history: History,
   medications: Medications,
   profile: Profile,
+  detection: Detection,
 };
 
 const Dashboard = () => {

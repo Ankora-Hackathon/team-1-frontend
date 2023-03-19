@@ -4,12 +4,12 @@ import { Input } from '../shared/form';
 import { API } from '../../libs/api';
 
 const Profile = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(JSON.parse(localStorage.getItem('user')) || {});
   const handleOnSubmit = async ({ event }) => {
     event.preventDefault();
-    const response = await API.post('https://5ece-146-255-134-170.eu.ngrok.io/auth/create', data);
+    // localStorage.setItem('user', JSON.stringify(data));
+    const response = await API.put('user/update', data);
     console.log(response);
-    console.log(data);
   };
 
   const handleOnChange = ({ key, value }) => {
@@ -17,6 +17,8 @@ const Profile = () => {
   };
   return (
     <form onSubmit={(event) => handleOnSubmit({ event })} className='flex flex-col space-y-4'>
+      <h1 className='text-2xl font-bold'>Welcome Aboard {data.userName}</h1>
+
       <div className='flex items-center space-x-4'>
         <Label label='First name'>
           <Input
@@ -44,7 +46,7 @@ const Profile = () => {
           <Input
             type='text'
             placeholder='E.g. 30'
-            value={data.age || ''}
+            value={String(data.age) || ''}
             onChange={(event) => handleOnChange({ event, key: 'age', value: event.target.value })}
           />
         </Label>
@@ -83,9 +85,9 @@ const Profile = () => {
           <Input
             type='text'
             placeholder='E.g. johnDoe'
-            value={data.username || ''}
+            value={data.userName || ''}
             onChange={(event) =>
-              handleOnChange({ event, key: 'username', value: event.target.value })
+              handleOnChange({ event, key: 'userName', value: event.target.value })
             }
           />
         </Label>
@@ -106,16 +108,6 @@ const Profile = () => {
             value={data.password || ''}
             onChange={(event) =>
               handleOnChange({ event, key: 'password', value: event.target.value })
-            }
-          />
-        </Label>
-        <Label label='Confirm password'>
-          <Input
-            type='password'
-            placeholder='********'
-            value={data.confirmPassword || ''}
-            onChange={(event) =>
-              handleOnChange({ event, key: 'confirmPassword', value: event.target.value })
             }
           />
         </Label>
