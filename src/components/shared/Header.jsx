@@ -17,7 +17,12 @@ const Header = () => {
           >
             Homepage
           </Link>
-          <button className='px-4 py-2 bg-[#0db4aa] text-white rounded uppercase'>Contact</button>
+          <Link
+            to='/contact'
+            className='px-4 py-2 bg-[#0db4aa] grid place-items-center text-white rounded uppercase'
+          >
+            Contact
+          </Link>
         </div>
         <div className='flex justify-end w-full space-x-4'>
           {localStorage.getItem('user') ? (
@@ -43,9 +48,12 @@ const Header = () => {
               </Link>
             </>
           )}
-          <button className='px-4 py-2 bg-[#0e8680] text-white rounded uppercase'>
+          <Link
+            to='/dashboard'
+            className='px-4 py-2 bg-[#0e8680] grid place-items-center text-white rounded uppercase'
+          >
             Lets get started
-          </button>
+          </Link>
         </div>
       </div>
     </header>

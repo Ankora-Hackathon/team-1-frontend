@@ -18,7 +18,7 @@ const Login = () => {
 
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('access_token', access_token);
-    navigate('/');
+    navigate('/dashboard');
   };
 
   const handleOnChange = ({ key, value }) => {
