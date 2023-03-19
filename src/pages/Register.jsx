@@ -64,7 +64,7 @@ const Register = () => {
                 <label htmlFor='male' className='flex items-center space-x-4'>
                   <input
                     onChange={(event) =>
-                      handleOnChange({ event, key: 'gender', value: event.target.value })
+                      handleOnChange({ event, key: 'sex', value: event.target.value })
                     }
                     type='radio'
                     id='male'
@@ -76,7 +76,7 @@ const Register = () => {
                 <label htmlFor='female' className='flex items-center space-x-4'>
                   <input
                     onChange={(event) =>
-                      handleOnChange({ event, key: 'gender', value: event.target.value })
+                      handleOnChange({ event, key: 'sex', value: event.target.value })
                     }
                     type='radio'
                     id='female'
