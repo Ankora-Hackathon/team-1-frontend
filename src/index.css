@@ -69,7 +69,7 @@
     display: flex;
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
-    background-color: #b3a18e;
+    background-color: #0db4aa;
     color: #fff;
     border-radius: 5px;
     border: none;
@@ -77,25 +77,31 @@
     border: none;
    
   }
+  .navbar_stack button:hover span.MuiButton-label {
+    color: white !important;
+  }
+  
+
 
   .connect-btn:hover {
-    background-color: #dfd0bb;
+    background-color: #0e8680;
   }
 
   .wrap {
     display: inline-block;
   }
   .dugme{
-    background-color: #b3a18e ;
+    background-color: #0db4aa;
     border-radius: 15%;
     width: fit-content;
     padding:10px 30px 10px 30px;
     align-items: center;
     display: flex;
     justify-content: center;
+    
   }
   .dugme:hover{
-    background-color: #dfd0bb;
+    background-color: #0e8680;
   }
   .form-title {
     margin-top: 10px;
@@ -165,11 +171,15 @@
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
+  color:'white';
   line-height: 1;
 }
 .banner button:hover svg {
   margin-left: 25px;
+  color:'white'
 }
+
+
 .banner img {
   animation: updown 3s linear infinite;
   
