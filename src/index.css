@@ -2,17 +2,189 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+  }
+
+  p, a, li, button, ul {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    text-shadow: 1px 1px 0px #fff;
+    text-align: center;
+  }
+ 
+  .container{
+    max-width: 60%;
+  }
+  .pozadina{
+    background-color: #f9f4ed;
+  }
+
+  .connect-btn {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: #b3a18e;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    border: none;
+   
+  }
+
+  .connect-btn:hover {
+    background-color: #dfd0bb;
+  }
+
+  .wrap {
+    display: inline-block;
+  }
+  .dugme{
+    background-color: #b3a18e ;
+    border-radius: 15%;
+    width: fit-content;
+    padding:10px 30px 10px 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .dugme:hover{
+    background-color: #dfd0bb;
+  }
+  .form-title {
+    margin-top: 10px;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .banner {
+    margin-top: 0;
+    justify-content: center;
+    padding: 60px 0 20px 0;
+    background-color: #f9f4ed;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+      font-size: 20px;
+      display: inline-block;
+  }
+  .medical-form {
+    max-width: 900px;
+    margin:  auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-check-label {
+    margin-left: 25px;
+  }
+  .banner h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    display: block;
+  }
+  .banner p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+}
+.banner button {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+.banner button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+}
+.banner button:hover svg {
+  margin-left: 25px;
+}
+.banner img {
+  animation: updown 3s linear infinite;
+  height:max-content;
+}
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #666;
+}

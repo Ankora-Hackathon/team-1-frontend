@@ -1,13 +1,12 @@
 import React from 'react';
-
-import './App.css';
-import MedicalForm from "../components/MedicalForm";
+import Navbar from '../components/Navbar';
+import { Banner } from './Banner';
 
 
 export const App = () => {
   return (
-    <div className='App'>
-<MedicalForm />
-    </div>
-  );
+  <div>
+  <Navbar/>
+  <Banner/>
+  </div>);
 };
