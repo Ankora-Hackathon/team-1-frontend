@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar';
 import { Box, Typography } from '@mui/material';
-import slika1 from '../components/assets/AboutUsSlika.png'
+import slika1 from '../components/assets/results.png'
 
-export const AboutUs = () => {
+export const Results = () => {
   return (
     <Box >
       <Navbar />
@@ -26,13 +26,9 @@ export const AboutUs = () => {
               <div className='home'>
                 <div className="text" style={{ fontSize: '20px' }}>
                   <Typography variant='h3' sx={{ fontWeight: 'bold', mb: '1rem' }}>
-                    About Us
+                   Results
                   </Typography>
-                 <p> Welcome to our website, where we provide reliable and comprehensive medical advice and information to help you better understand your health concerns.</p>
-                  <p>We understand that finding trustworthy medical information online can be overwhelming. That&apos;s why we&apos;ve created a user-friendly platform that&apos;s easy to navigate, and we use the latest medical research and guidelines to ensure that our information is reliable.</p>
-                  <p>We believe that everyone deserves access to high-quality medical information, and we&apos;re committed to keeping your personal information confidential. We value transparency and encourage your questions and feedback.</p>
-                 <p>Our website is designed to be accessible to everyone, regardless of their medical knowledge or background. We hope that our platform can empower you to take charge of your health and make informed decisions about your well-being.</p>
-                  <p>Thank you for choosing us as your trusted source of medical advice. We&apos;re here to help you achieve better health and well-being.</p>
+                
                 </div>
               </div>
             </Typography>

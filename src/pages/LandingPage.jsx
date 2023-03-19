@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import './App.css'
 import Navbar from '../components/Navbar';
-import slika_doktora from '../components/constants/doctors.png'
+import slika_doktora from '../components/assets/doctors.png'
 
   export const LandingPage =()=> {
 
@@ -12,14 +12,7 @@ import slika_doktora from '../components/constants/doctors.png'
         <Box
           sx={{
             backgroundColor:'#f9f4ed',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '2rem',
+            
           }}
         >
           

@@ -6,6 +6,8 @@ import { AboutUs } from './pages/AboutUs';
 import { LogIn } from './pages/LogIn';
 import { Register } from './pages/Register';
 import { AboutApp } from './pages/AboutApp';
+import { Contact } from './pages/Contact';
+import { Results } from './pages/Results';
 
 export const router = createBrowserRouter([
   {
@@ -31,5 +33,13 @@ export const router = createBrowserRouter([
   {
     path: '/aboutApp',
     element: <AboutApp/>,
+  },
+  {
+    path: '/contact',
+    element: <Contact/>,
+  },
+  {
+    path: '/results',
+    element: <Results/>,
   }
 ]);

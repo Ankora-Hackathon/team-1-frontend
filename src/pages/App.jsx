@@ -1,9 +1,12 @@
 import React from 'react';
-
-import { LandingPage } from './LandingPage';
-
+import Navbar from '../components/Navbar';
+import { Banner } from './Banner';
 
 
 export const App = () => {
-  return <LandingPage />;
+  return (
+  <div>
+  <Navbar/>
+  <Banner/>
+  </div>);
 };
