@@ -26,11 +26,14 @@ class ApiFactory {
     return res.data;
   }
 
-  async post(path, data) {
+  async post(path, data, token) {
     const res = await this.client({
       method: 'POST',
       url: `${this.url}/${path}`,
       data,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
     return res.data;
   }

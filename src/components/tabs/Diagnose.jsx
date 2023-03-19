@@ -3,23 +3,36 @@ import { Label } from '../shared';
 import { Input } from '../shared/form';
 import { API } from '../../libs/api';
 
-const Dyagnose = () => {
+const Diagnose = () => {
   const [data, setData] = useState({});
+  const [response, setResponse] = useState({});
 
   const handleOnSubmit = async ({ event }) => {
     event.preventDefault();
-    const response = await API.post('http://localhost:5001/diagnosis/create', data);
-    console.log(response);
-    console.log(data);
+    setResponse({ status: 'fetching' });
+    try {
+      const response = await API.post(
+        'diagnosis/create',
+        { ...data, age: Number(data.age) },
+        localStorage.getItem('access_token'),
+      );
+      setResponse({ status: 'fetched', data: response });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleOnChange = ({ key, value }) => {
     setData((previousState) => ({ ...previousState, [key]: value }));
   };
+
   return (
     <>
-      <h1 className='text-2xl font-bold'>Dyagnose</h1>
-      <form onSubmit={(event) => handleOnSubmit({ event })} className='flex flex-col space-y-4'>
+      <h1 className='text-2xl font-bold'>Diagnose</h1>
+      <form
+        onSubmit={(event) => handleOnSubmit({ event })}
+        className={`flex-col space-y-4 ${response.status === 'fetched' ? 'hidden' : 'flex'}`}
+      >
         <div className='grid items-center grid-cols-3 space-x-4'>
           <Label label='Age'>
             <Input
@@ -38,7 +51,7 @@ const Dyagnose = () => {
                     type='radio'
                     id='male'
                     name='gender'
-                    value='male'
+                    value='MALE'
                   />
                   <h1 className='text-gray-400'>Male</h1>
                 </label>
@@ -48,7 +61,7 @@ const Dyagnose = () => {
                     type='radio'
                     id='female'
                     name='gender'
-                    value='female'
+                    value='FEMALE'
                   />
                   <h1 className='text-gray-400'>Female</h1>
                 </label>
@@ -86,7 +99,7 @@ const Dyagnose = () => {
                     type='radio'
                     id='low'
                     name='intensity'
-                    value='low'
+                    value='LOW'
                   />
                   <h1 className='text-gray-400'>Low</h1>
                 </label>
@@ -98,7 +111,7 @@ const Dyagnose = () => {
                     type='radio'
                     id='medium'
                     name='intensity'
-                    value='medium'
+                    value='MEDIUM'
                   />
                   <h1 className='text-gray-400'>Medium</h1>
                 </label>
@@ -110,7 +123,7 @@ const Dyagnose = () => {
                     type='radio'
                     id='high'
                     name='intensity'
-                    value='high'
+                    value='HIGH'
                   />
                   <h1 className='text-gray-400'>High</h1>
                 </label>
@@ -125,12 +138,20 @@ const Dyagnose = () => {
           placeholder='Description..'
           className='px-4 py-2 bg-transparent border border-[#a59179] rounded outline-none resize-none'
         ></textarea>
-        <button type='submit' className='px-4 py-2 rounded bg-[#a59179] text-white'>
-          Generate response
+        <button
+          type='submit'
+          disabled={response.status === 'fetching'}
+          className='px-4 disabled:bg-opacity-50 py-2 rounded bg-[#a59179] text-white'
+        >
+          {response.status === 'fetching' ? 'Generating response' : 'Generate response'}
         </button>
       </form>
+
+      {response?.data?.response.choices.map((choice) => (
+        <p key={choice.index}>{choice.text}</p>
+      ))}
     </>
   );
 };
 
-export default Dyagnose;
+export default Diagnose;
