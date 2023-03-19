@@ -172,7 +172,7 @@
 }
 .banner img {
   animation: updown 3s linear infinite;
-  height:max-content;
+  
 }
 @keyframes updown {
     0% {

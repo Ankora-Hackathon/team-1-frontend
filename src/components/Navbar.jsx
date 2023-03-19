@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Button, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
-import logo from '../components/assets/Logo.png'
+import logo from '../components/assets/logoAI.png'
+import logoNaziv from '../components/assets/logoo.png'
 
 const Navbar = () => {
   return (
@@ -21,16 +22,20 @@ const Navbar = () => {
     >
 
       <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '10px' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', marginLeft: '18px' }}>
-          <img src={logo} alt="logo" height="130px" width="120px" />
+        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={logo} alt="logo" height="100px" width="90px" />
+          
         </Link>
-
+       <div style={{marginTop:'10px'}}>
+       <img src={logoNaziv} alt="logo" height="120px" width="220px" />
+       </div>
         <Button
           variant="contained"
           component={Link}
           to="/aboutUs"
           sx={{
-            marginLeft: '10px', '&:hover': {
+           
+            marginLeft: '20px', '&:hover': {
               backgroundColor: '#b3a18e',
             }, backgroundColor: '#dfd0bb', color: 'white', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
           }}
