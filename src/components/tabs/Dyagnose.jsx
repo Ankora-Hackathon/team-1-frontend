@@ -30,7 +30,7 @@ const Dyagnose = () => {
             />
           </Label>
           <Label label='Sex'>
-            <label className='flex flex-col px-4 py-2 space-y-2 border border-gray-800 rounded'>
+            <label className='flex flex-col px-4 py-2 space-y-2 border border-[#a59179] rounded'>
               <div className='flex items-center space-x-4'>
                 <label htmlFor='male' className='flex items-center space-x-4'>
                   <input
@@ -76,7 +76,7 @@ const Dyagnose = () => {
             />
           </Label>
           <Label label='Intensity'>
-            <label className='flex flex-col px-4 py-2 space-y-2 border border-gray-800 rounded'>
+            <label className='flex flex-col px-4 py-2 space-y-2 border border-[#a59179] rounded'>
               <div className='flex items-center space-x-4'>
                 <label htmlFor='low' className='flex items-center space-x-4'>
                   <input
@@ -123,9 +123,9 @@ const Dyagnose = () => {
           cols='30'
           rows='10'
           placeholder='Description..'
-          className='px-4 py-2 bg-transparent border border-gray-800 rounded outline-none resize-none'
+          className='px-4 py-2 bg-transparent border border-[#a59179] rounded outline-none resize-none'
         ></textarea>
-        <button type='submit' className='px-4 py-2 rounded bg-[#6C63FF]'>
+        <button type='submit' className='px-4 py-2 rounded bg-[#a59179] text-white'>
           Generate response
         </button>
       </form>

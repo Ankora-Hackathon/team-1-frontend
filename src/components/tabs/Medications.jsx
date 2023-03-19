@@ -32,11 +32,11 @@ const Medications = () => {
               value={medication}
             />
           </Label>
-          <button className='px-4 py-2 h-[42px] bg-gray-800 rounded'>Add</button>
+          <button className='px-4 py-2 h-[42px] bg-[#a59179] text-white rounded'>Add</button>
         </form>
         <div className='flex flex-col space-y-2'>
           <h1>List of used medications</h1>
-          <div className='divide-y divide-gray-800'>
+          <div className='divide-y divide-[#a59179]'>
             {medications.map((item, id) => (
               <p key={id} className='py-4 text-gray-400'>
                 {item}

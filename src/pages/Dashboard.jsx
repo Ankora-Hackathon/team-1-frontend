@@ -42,8 +42,8 @@ const Dashboard = () => {
                 key={item.value}
                 onClick={() => setCurrentTab(item.value)}
                 className={`w-full px-4 py-2 ${
-                  currentTab === item.value ? 'bg-gray-800' : 'border border-gray-800'
-                } border border-gray-800 rounded`}
+                  currentTab === item.value ? 'bg-[#a59179] text-white' : 'border border-[#a59179]'
+                } border border-[#a59179]  rounded`}
               >
                 {item.label}
               </button>

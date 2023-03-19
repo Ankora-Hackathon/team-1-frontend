@@ -2,7 +2,7 @@ import Axios from 'axios';
 import * as qs from 'qs';
 
 class ApiFactory {
-  url = 'http://localhost:5001';
+  url = 'https://ff1f-195-222-40-114.eu.ngrok.io';
 
   client = Axios.create();
 

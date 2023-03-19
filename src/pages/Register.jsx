@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Label, Layout } from '../components/shared/';
 import { API } from '../libs/api';
 import { Input } from '../components/shared/form';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [data, setData] = useState({});
+  const navigate = useNavigate();
 
   const handleOnSubmit = async ({ event }) => {
     event.preventDefault();
-    const response = await API.post('auth/create', data);
+    // eslint-disable-next-line no-unused-vars
+    const { confirmPassword, ...rest } = data;
+    const response = await API.post('auth/create', { ...rest, age: Number(data.age) });
     console.log(response);
     console.log(data);
   };
@@ -17,10 +21,12 @@ const Register = () => {
     setData((previousState) => ({ ...previousState, [key]: value }));
   };
 
+  if (localStorage.getItem('user')) return navigate('/');
+
   return (
     <Layout>
       <div className='col-span-1'>
-        <img src='/signup.svg' alt='' />
+        <img src='/RegistracijaLijevo.png' alt='' />
       </div>
       <div className='flex flex-col justify-center col-span-1 space-y-4'>
         <h1 className='text-4xl font-bold'>Sign Up</h1>
@@ -93,9 +99,9 @@ const Register = () => {
               <Input
                 type='text'
                 placeholder='E.g. johnDoe'
-                value={data.username || ''}
+                value={data.userName || ''}
                 onChange={(event) =>
-                  handleOnChange({ event, key: 'username', value: event.target.value })
+                  handleOnChange({ event, key: 'userName', value: event.target.value })
                 }
               />
             </Label>
@@ -132,7 +138,7 @@ const Register = () => {
               />
             </Label>
           </div>
-          <button className='px-4 py-2 rounded bg-[#6C63FF]'>Sign in</button>
+          <button className='px-4 py-2 rounded bg-[#a59179] text-white'>Sign in</button>
         </form>
       </div>
     </Layout>

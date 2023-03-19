@@ -1,34 +1,58 @@
-import React from 'react';
-import { Layout } from '../components/shared';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
+import { Label, Layout } from '../components/shared';
+import { Input } from '../components/shared/form';
+import { API } from '../libs/api';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [data, setData] = useState({});
+  const navigate = useNavigate();
+
+  const handleOnSubmit = async ({ event }) => {
+    event.preventDefault();
+    const response = await API.post('auth/login', data);
+    const { user, access_token } = response;
+
+    if (!access_token) return;
+
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('access_token', access_token);
+    navigate('/');
+  };
+
+  const handleOnChange = ({ key, value }) => {
+    setData((previousState) => ({ ...previousState, [key]: value }));
+  };
   return (
     <Layout>
       <div className='col-span-1'>
-        <img src='/register.svg' alt='' />
+        <img src='/LogInLijevo.png' alt='' />
       </div>
       <div className='flex flex-col justify-center col-span-1 space-y-4'>
         <h1 className='text-4xl font-bold'>Sign In</h1>
-        <form className='flex flex-col space-y-4'>
-          <label htmlFor='userName' className='flex flex-col space-y-2'>
-            <h1 className='text-gray-400'>Username</h1>
-            <input
+        <form onSubmit={(event) => handleOnSubmit({ event })} className='flex flex-col space-y-4'>
+          <Label label='Email'>
+            <Input
               type='text'
-              id='userName'
-              placeholder='E.g. johnDoe'
-              className='w-full px-4 py-2 bg-transparent border border-gray-800 rounded outline-none'
+              placeholder='E.g. johnDoe@example.com'
+              value={data.email || ''}
+              onChange={(event) =>
+                handleOnChange({ event, key: 'email', value: event.target.value })
+              }
             />
-          </label>
-          <label htmlFor='userName' className='flex flex-col space-y-2'>
-            <h1 className='text-gray-400'>Password</h1>
-            <input
+          </Label>
+          <Label label='Password'>
+            <Input
               type='password'
-              id='password'
               placeholder='********'
-              className='w-full px-4 py-2 bg-transparent border border-gray-800 rounded outline-none'
+              value={data.password || ''}
+              onChange={(event) =>
+                handleOnChange({ event, key: 'password', value: event.target.value })
+              }
             />
-          </label>
-          <button className='px-4 py-2 rounded bg-[#6C63FF]'>Sign in</button>
+          </Label>
+          <button className='px-4 py-2 rounded bg-[#a59179] text-white'>Sign in</button>
         </form>
       </div>
     </Layout>

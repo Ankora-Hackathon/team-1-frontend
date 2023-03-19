@@ -6,16 +6,19 @@ import Layout from '../components/shared/Layout';
 const Homepage = () => {
   return (
     <Layout>
-      <div className='flex flex-col justify-center col-span-1 space-y-4'>
+      <div className='flex flex-col justify-center col-span-1 space-y-4 text-center'>
         <h1 className='text-6xl font-bold'>How are you feeling today? Or not very well</h1>
         <p>AnkoraMed a day keeps the doctor away!</p>
-        <Link to='/' className='flex px-4 py-2 space-x-2 bg-[#6C63FF] rounded w-fit'>
+        <Link
+          to='/'
+          className='flex px-4 py-2 space-x-2 mx-auto text-white bg-[#0db4aa] rounded w-fit'
+        >
           <span>Lets start</span>
           <ArrowRightCircleIcon className='w-6 h-6' />
         </Link>
       </div>
       <div className='col-span-1'>
-        <img src='/homepage.svg' alt='' />
+        <img src='/doktori.png' alt='' />
       </div>
     </Layout>
   );

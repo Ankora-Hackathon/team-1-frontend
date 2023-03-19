@@ -120,7 +120,7 @@ const Profile = () => {
           />
         </Label>
       </div>
-      <button className='px-4 py-2 rounded bg-[#6C63FF] w-fit'>Update profile</button>
+      <button className='px-4 py-2 rounded bg-[#a59179] text-white w-fit'>Update profile</button>
     </form>
   );
 };
