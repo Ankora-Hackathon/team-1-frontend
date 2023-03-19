@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Navbar from '../components/Navbar';
 import leftImage from '../components/assets/RegistracijaLijevo.png'
-import rightImage from '../components/assets/RegistracijaDesno.png'
+import rightImage from '../components/assets/doktorica2.png'
 import "../registerForm.css";
 
 export const Register = () => {

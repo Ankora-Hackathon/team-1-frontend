@@ -158,7 +158,7 @@ export const Patient = () => {
           </div>
           <div className="d-flex justify-content-center">
           <div className="d-grid gap-2" >
-          <Link to="/results">
+          <Link to="/results" style={{textDecoration:'none'}}>
             <button type="submit" className="dugme" onClick={()=>{setHealthCondition(healthCondition)}}>
              <div style={{fontWeight: 'bold', color:'white'}}> Submit</div>
             </button>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import Navbar from '../components/Navbar';
-import leftImage from '../components/assets/LogInLijevo.png'
-import rightImage from '../components/assets/LogInDesno.png'
+import leftImage from '../components/assets/dr.jpg'
+import rightImage from '../components/assets/dktr.jpg'
 import "../LoginForm.css";
 
 export const LogIn = () => {
