@@ -116,7 +116,7 @@
     margin-top: 0;
     justify-content: center;
     padding: 60px 0 20px 0;
-    background-color: #f9f4ed;
+    background: linear-gradient(-90.21deg, #5ea9b8, #f9f4ed);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -178,7 +178,6 @@
   margin-left: 25px;
   color:'white'
 }
-
 
 .banner img {
   animation: updown 3s linear infinite;

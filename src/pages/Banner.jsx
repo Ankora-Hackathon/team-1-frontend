@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
-import doktori_slika from "../components/assets/doktori.png";
+import doktori_slika from "../components/assets/doktorii.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
