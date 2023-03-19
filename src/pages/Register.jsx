@@ -8,7 +8,7 @@ const Register = () => {
 
   const handleOnSubmit = async ({ event }) => {
     event.preventDefault();
-    const response = await API.post('https://5ece-146-255-134-170.eu.ngrok.io/auth/create', data);
+    const response = await API.post('auth/create', data);
     console.log(response);
     console.log(data);
   };
@@ -50,7 +50,7 @@ const Register = () => {
           <div className='flex items-center space-x-4'>
             <Label label='Age'>
               <Input
-                type='text'
+                type='number'
                 placeholder='E.g. 30'
                 value={data.age || ''}
                 onChange={(event) =>
@@ -69,7 +69,7 @@ const Register = () => {
                     type='radio'
                     id='male'
                     name='gender'
-                    value='male'
+                    value='MALE'
                   />
                   <h1 className='text-gray-400'>Male</h1>
                 </label>
@@ -81,7 +81,7 @@ const Register = () => {
                     type='radio'
                     id='female'
                     name='gender'
-                    value='female'
+                    value='FEMALE'
                   />
                   <h1 className='text-gray-400'>Female</h1>
                 </label>
