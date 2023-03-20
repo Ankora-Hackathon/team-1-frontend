@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Label, Button, TextInput } from "flowbite-react";
-import { Form } from "react-router-dom";
 
 const LoginForm = () => {
   const [formValues, setFormValues] = useState({
@@ -8,10 +6,10 @@ const LoginForm = () => {
     password: '',
   });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
-  };
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,36 +18,14 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center">
-      <Form onSubmit={handleSubmit} className="w-full max-w-lg">
-        <div className="mb-4">
-          <Label htmlFor="email">Email</Label>
-          <TextInput
-            type="email"
-            name="email"
-            id="email"
-            value={formValues.email}
-            onChange={handleChange}
-          />
-        </div>
+    <div className='flex items-center justify-center h-screen'>
+      <form onSubmit={handleSubmit} className='w-full max-w-lg'>
+        <div className='mb-4'></div>
 
-        <div className="mb-4">
-          <Label htmlFor="password">Password</Label>
-          <TextInput
-            type="password"
-            name="password"
-            id="password"
-            value={formValues.password}
-            onChange={handleChange}
-          />
-        </div>
+        <div className='mb-4'></div>
 
-        <div className="flex justify-end">
-          <Button type="submit" color="primary">
-            Login
-          </Button>
-        </div>
-      </Form>
+        <div className='flex justify-end'></div>
+      </form>
     </div>
   );
 };
